@@ -1,0 +1,36 @@
+.NavBar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5em 2em;
+    background: $dark-gray;
+    font-family: 'Montserrat', sans-serif;
+
+    &__main-logo {
+        &__h2 {
+            color: $primary-pink;
+            font-weight: 700;
+        }
+    }
+
+    &__list {
+        &__ul {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 0;
+            list-style: none;
+
+            &__li {
+                color: white;
+                font-weight: 600;
+                margin-right: 4em;
+            }
+
+            &__li:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
