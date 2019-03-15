@@ -5,8 +5,8 @@ class Filters extends Component{
     
 
     render(){
-
-        if(!this.props.departments) return <p>Cargando...</p>;
+        return null;
+        /*if(!this.props.departments) return <p>Cargando...</p>;
 
         return <div>
             <h3>Filters</h3>
@@ -20,7 +20,7 @@ class Filters extends Component{
             <button onClick={this.props.onAdd}>
                 Ver más
             </button>
-        </div>
+        </div>*/
     }
 }
 

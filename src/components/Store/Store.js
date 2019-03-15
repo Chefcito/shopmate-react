@@ -7,7 +7,7 @@ class Store extends Component{
         return <div>
             <h1>Store page</h1>
 
-            <Filters onAdd={this.props.onAdd} departments={this.props.departments}/>
+            <Filters />
 
             <p>productos</p>
         </div>

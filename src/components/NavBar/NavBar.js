@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
+import { observer } from 'mobx-react';
 
+import store from '../../stores/stores';
 
-class NavBar extends Component{
+store.getDepartments();
 
-    
+const NavBar = () => {
+    console.log(store.departments.get());
+    if(!store.departments.get()) return <p>Cargando...</p>;
 
-    render(){
-        if(!this.props.departments) return <p>Cargando...</p>;
-
-        return <nav>
-            <h1>{this.props.departments.length}</h1>
-            {this.props.departments.map(( dep ) => {
-                return <a key={dep.department_id} 
-                    href={`/department/${dep.name}`}>
-                    {dep.name}
-                </a>;
-            })}
-        </nav>;
-    }
+    return <nav>
+        <h1>{store.departments.get().length}</h1>
+        {store.departments.get().map(( dep ) => {
+            return <a key={dep.department_id} 
+                href={`/department/${dep.name}`}>
+                {dep.name}
+            </a>;
+        })}
+    </nav>;
 }
 
-export default NavBar;
+
+export default observer(NavBar);
